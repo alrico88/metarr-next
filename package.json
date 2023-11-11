@@ -1,7 +1,15 @@
 {
-  "name": "metarr-next",
+  "name": "metarr",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "Alberto Rico",
+    "url": "https://alrico.es"
+  },
+  "repository": {
+    "url": "https://github.com/alrico88/metarr"
+  },
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
