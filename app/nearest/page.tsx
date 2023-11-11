@@ -1,6 +1,6 @@
 'use client';
 
-import { Suspense, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { bearingToAzimuth, getUserPosition } from '../helpers/position';
 import type { NearestAirport } from '@/services/metar';
 import { withQuery } from 'ufo';
@@ -23,6 +23,8 @@ export default function Nearest() {
 
         const userPos = await getUserPosition();
 
+        const ONE_WEEK_IN_SECONDS = 604800;
+
         const res = await fetch(
           withQuery('/api/nearest', {
             latitude: userPos.coords.latitude,
@@ -30,7 +32,7 @@ export default function Nearest() {
           }),
           {
             next: {
-              revalidate: 604800,
+              revalidate: ONE_WEEK_IN_SECONDS,
             },
           },
         );
