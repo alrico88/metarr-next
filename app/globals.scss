@@ -1,0 +1,21 @@
+$body-color: #231f20;
+$primary: #1f2d4c;
+$secondary: #1d383a;
+
+@import 'node_modules/bootstrap/scss/bootstrap';
+
+body {
+  background-color: #ebf4f5;
+}
+
+.btn-group {
+  .btn-link {
+    text-decoration: none;
+
+    &.active {
+      color: black;
+      font-weight: bold;
+      text-decoration: underline !important;
+    }
+  }
+}
